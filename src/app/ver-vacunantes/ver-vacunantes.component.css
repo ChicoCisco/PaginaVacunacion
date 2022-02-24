@@ -1,0 +1,12 @@
+.tb{
+    width: 100%;
+    border: 1px;
+}
+
+.con{
+    margin-top: 50px;
+    margin-bottom: 15px;
+    /*padding: 100px;*/
+    background-color: rgb(207, 209, 209);
+    border-radius: 65px;
+}

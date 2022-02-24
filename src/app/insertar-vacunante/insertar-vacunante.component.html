@@ -1,0 +1,118 @@
+<div class="container con">
+    <h1 class="text-center">Ingresar Vacunante</h1><br>
+    
+    <div class="register-form">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+
+                <label>Ingresa tu CURP</label>
+                <input 
+                type="text"
+                formControlName="CURP"
+                class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f['CURP'].errors }"
+                ><br>
+            
+                <div *ngIf="submitted && f['CURP'].errors" class="invalid-feedback">
+                    <div *ngIf="f['CURP'].errors['required']">Tu CURP es un campo OBLIGATORIO</div>
+                </div>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Ingresa tu Nombre Completo</label>
+                <input 
+                type="text"
+                formControlName="NombreCompleto"
+                class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f['NombreCompleto'].errors }"
+                ><br>
+
+                <div *ngIf="submitted && f['NombreCompleto'].errors" class="invalid-feedback">
+                    <div *ngIf="f['NombreCompleto'].errors['required']">Tu Nombre Completo es un campo OBLIGATORIO</div>
+                </div>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Ingresa Edad</label>
+                <input 
+                type="text"
+                formControlName="Edad"
+                class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f['Edad'].errors }"
+                ><br>
+
+                <div *ngIf="submitted && f['Edad'].errors" class="invalid-feedback">
+                    <div *ngIf="f['Edad'].errors['required']">Tu Edad es un campo OBLIGATORIO</div>
+                </div>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Ingresa tu Correo Electronico</label>
+                <input 
+                type="email"
+                formControlName="Email"
+                class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f['Email'].errors }"
+                ><br>
+
+                <div *ngIf="submitted && f['Email'].errors" class="invalid-feedback">
+                    <div *ngIf="f['Email'].errors['required']">Tu Email es un campo OBLIGATORIO</div>
+                    <div *ngIf="f['Email'].errors['email']">Tu Email es invalido</div>
+                </div>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Ingresa tu Direccion</label>
+                <input 
+                type="text"
+                formControlName="Direccion"
+                class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f['Direccion'].errors }"
+                ><br>
+
+                <div *ngIf="submitted && f['Direccion'].errors" class="invalid-feedback">
+                    <div *ngIf="f['Direccion'].errors['required']">Tu Direccion es un campo OBLIGATORIO</div>
+                </div>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Ingresa tu Telefono</label>
+                <input 
+                type="tel"
+                formControlName="Telefono"
+                class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f['Telefono'].errors }"
+                ><br>
+
+                <div *ngIf="submitted && f['Telefono'].errors" class="invalid-feedback">
+                    <div *ngIf="f['Telefono'].errors['required']">Tu Telefono es un campo OBLIGATORIO</div>
+                </div>
+
+            </div>
+
+            <div class="form-group">
+
+                <button type="submit" class="btn btn-primary btb btb1">Registrar Vacunante</button>
+
+                <button
+                  type="button"
+                  (click)="onReset()"
+                  class="btn btn-warning btb"
+                >
+                  Resetear Formulario
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+<router-outlet></router-outlet>
